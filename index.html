@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="./style.css">
+
+  </head>
+    
+  <body>
+  <div class="wrap" dir="rtl">
+  <header>
+    <div class="titleBox">
+      <h1>Hero Rescue Shooter</h1>
+      <p>
+        قهرمان پرواز می‌کنه، شلیک می‌کنه، با جواب درست “پرش اضافه” می‌گیره،
+        مرحله‌به‌مرحله سخت‌تر می‌شه و آخر پرنسس رو نجات می‌ده — ساخته‌ی <b>Ali Moslehi</b>
+      </p>
+    </div>
+
+    <div class="hudBox">
+      <div class="hud">
+        <div class="chip">مرحله: <b id="lvl">A1</b></div>
+        <div class="chip">زمان: <b id="time">60</b>s</div>
+        <div class="chip">امتیاز: <b id="score">0</b></div>
+        <div class="chip">بهترین رکورد: <b id="best">0</b></div>
+        <div class="chip">جون: <b id="hp">3</b></div>
+        <div class="chip">پرش اضافه: <b id="jumps">0</b></div>
+        <div class="chip">کلید: <b id="key">✖</b></div>
+        <div class="chip">درستِ مرحله: <b id="c5">0</b>/5</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="prompt">
+    <div class="q">
+      <span class="label">هدف (فارسی):</span>
+      <span class="value" id="targetFa">برای شروع Enter یا کلیک</span>
+    </div>
+
+    <div class="row">
+      <div class="kbds">
+        <span class="kbd">← → حرکت</span>
+        <span class="kbd">Space پرش</span>
+        <span class="kbd">↑ پرواز</span>
+        <span class="kbd">X شلیک</span>
+        <span class="kbd">E باز کردن قفس</span>
+        <span class="kbd">M موزیک</span>
+        <span class="kbd">R ریست</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ✅ فقط همین یک canvas -->
+  <canvas id="c" width="1200" height="560"></canvas>
+
+  <div class="controls">
+    <div class="btns">
+      <button class="primary" id="startBtn" type="button">شروع / ریست</button>
+      <button id="musicBtn" type="button">موزیک: خاموش</button>
+    </div>
+    <div id="msg">Enter یا کلیک برای شروع. (اول بازی یک معرفی کوتاه دارد)</div>
+  </div>
+
+  <!-- ✅ این بخش باید باشه چون JS باهاش کار داره -->
+  <div class="choiceOverlay" id="choiceOverlay" aria-hidden="true">
+    <div class="choiceCard">
+      <div class="choiceTitle">Willst du zur nächsten Stufe gehen?</div>
+      <div class="choiceSub">Ja → مرحله بعد | Nein → شروع از اول (A1)</div>
+      <div class="choiceBtns">
+        <button class="primary" id="yesBtn" type="button">Ja</button>
+        <button id="noBtn" type="button">Nein</button>
+      </div>
+      <div class="choiceHint">کلیدها: Y = Ja ، N = Nein</div>
+    </div>
+  </div>
+</div>
+
+<!-- ✅ فقط یک موبایل‌کنترل -->
+<div id="mobileControls" class="mctrl" aria-hidden="true">
+  <div class="mctrl-left">
+    <button class="mbtn" id="btnLeft"  type="button">◀</button>
+    <button class="mbtn" id="btnRight" type="button">▶</button>
+  </div>
+
+  <div class="mctrl-right">
+    <button class="mbtn mbtn-small" id="btnE"     type="button">E</button>
+    <button class="mbtn"           id="btnJump"  type="button">⤒</button>
+    <button class="mbtn"           id="btnJet"   type="button">JET</button>
+    <button class="mbtn mbtn-shoot" id="btnShoot" type="button">X</button>
+  </div>
+
+  <div class="mctrl-top">
+    <button class="mbtn mbtn-small" id="btnStart" type="button">Start</button>
+    <button class="mbtn mbtn-small" id="btnReset" type="button">R</button>
+  </div>
+</div>
+    <script  src="./script.js"></script>
+
+  </body>
+  
+</html>
